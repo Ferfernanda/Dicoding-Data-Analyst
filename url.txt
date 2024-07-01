@@ -1,1 +1,1 @@
-https://ferfernanda-dicoding-data-analyst.streamlit.app/
+https://ferfernanda-data-analyst-dicoding.streamlit.app/
