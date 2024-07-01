@@ -66,69 +66,11 @@ cat_data = [seasons, years, months, holidays, weekdays, workingdays, weathersits
 
 cat_dict = dict(zip(categorical, cat_data))
 
-# # Date Time - Categorical Day
-# df_day['date'] = pd.to_datetime(df_day['date'])
-
-# for cat, data in cat_dict.items():
-#   df_day[cat] = df_day[cat].map(data)
-#   df_day[cat] = df_day[cat].astype('category')
-
-# # Date Time - Categorical Hour
-# df_hour['date'] = pd.to_datetime(df_hour['date'])
-
-# for cat, data in cat_dict.items():
-#   df_hour[cat] = df_hour[cat].map(data)
-#   df_hour[cat] = df_hour[cat].astype('category')  
-    
-# # Season_rent_df
-# def create_season_rent_df(df):
-#     season_rent_df = df.groupby(by='season')[['registered', 'casual']].sum().reset_index()
-#     return season_rent_df
-
-# # Monthly_rent_df
-# def create_monthly_rent_df(df):
-#     monthly_rent_df = df.groupby(by='month').agg({
-#         'count': 'sum'
-#     })
-#     ordered_months = [
-#         'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-#         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-#     ]
-#     monthly_rent_df = monthly_rent_df.reindex(ordered_months, fill_value=0)
-#     return monthly_rent_df
-
-# # Weather_rent_df
-# def create_weather_rent_df(df):
-#     weather_rent_df = df.groupby(by='weathersit').agg({
-#         'count': 'sum'
-#     })
-#     return weather_rent_df
-
 
 # komponen filter
 min_date = pd.to_datetime(df_day['date']).dt.date.min()
 max_date = pd.to_datetime(df_day['date']).dt.date.max()
  
-with st.sidebar:
-    
-    # start_date & end_date dari date_input
-    start_date, end_date = st.date_input(
-        label='Rentang Waktu',
-        min_value= min_date,
-        max_value= max_date,
-        value=[min_date, max_date]
-    )
-
-main_df = df_day[(df_day['date'] >= str(start_date)) & 
-                (df_day['date'] <= str(end_date))]
-
-# # dataframe
-# season_rent_df = create_season_rent_df(main_df)
-# monthly_rent_df = create_monthly_rent_df(main_df)
-# weather_rent_df = create_weather_rent_df(main_df)
-
-
-
 # judul
 st.header('Ferfernanda Bicycle Rental')
 
