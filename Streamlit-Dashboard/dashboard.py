@@ -71,11 +71,11 @@ filtered_data = df_day[(df_day['month'] == 'Sep')]
 
 # Plotting
 plt.figure(figsize=(12, 6))
-sns.barplot(data=filtered_data, x='date', y='count', hue='year')
+sns.barplot(data=filtered_data, x='date', y='count', hue='count')
 plt.title('Bicycle Rent Trends in September 2012')
 plt.xlabel('Date')
 plt.ylabel('Counts Total')
-plt.xticks(rotation=45)
+plt.xticks(rotation=90)
 plt.tight_layout()
 st.pyplot(plt)
 
@@ -84,11 +84,11 @@ hour = df_hour[(df_hour['date'] == '2012-09-15')]
 
 # Plotting
 plt.figure(figsize=(12, 6))
-sns.barplot(data=hour, x='hour', y='count')
+sns.barplot(data=hour, x='hour', y='count' )
 plt.title('Bicycle Rent Trends on September 15 2012')
 plt.xlabel('Hour')
 plt.ylabel('Counts Total')
-plt.xticks(rotation=45)
+plt.xticks(rotation=0)
 plt.tight_layout()
 st.pyplot(plt)
 
