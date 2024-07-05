@@ -1,5 +1,4 @@
 import pandas as pd
-import matplotlib
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
@@ -8,34 +7,15 @@ import streamlit as st
 sns.set(style='darkgrid')
 
 # DataFrame Day
-df_day = pd.read_csv("Streamlit-Dashboard/cleaned_bike-sharing_day.csv")
+df_day = pd.read_csv("cleaned_bike-sharing_day.csv")
 df_day.head()
 
 # DataFrame Hour
-df_hour = pd.read_csv("Streamlit-Dashboard/cleaned_bike-sharing_hour.csv")
+df_hour = pd.read_csv("cleaned_bike-sharing_hour.csv")
 df_hour.head()
 
 df_day = df_day.drop("instant", axis=1)
 df_hour = df_hour.drop("instant", axis=1)
-
-# # Rename Column
-# column_day = {'dteday': 'date', 
-#               'yr': 'year', 
-#               'mnth': 'month',
-#               'temp': 'temperature', 
-#               'hum': 'humidity',
-#               'cnt': 'count'}
-
-# column_hour = {'dteday': 'date', 
-#                'yr': 'year', 
-#                'mnth': 'month',
-#                'hr': 'hour', 
-#                'temp': 'temperature', 
-#                'hum': 'humidity',
-#                'cnt': 'count'}
-
-# df_day.rename(columns=column_day, inplace=True)
-# df_hour.rename(columns=column_hour, inplace=True)
 
 # Categorical Data
 
@@ -163,4 +143,4 @@ plt.tight_layout()
 st.pyplot(plt)
 
 
-st.caption('Copyright (c) Ferfernanda Simple Webs 2024')
+st.caption('Copyright (c) Ferfernanda Simple Dashboard Data Analytics 2024')
