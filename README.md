@@ -14,8 +14,7 @@ This Repository used to submission Dicoding Data Analyst Project by Muhammad Fer
 2. Run the app
 
    ```
-   & cd Streamlit-Dashboard
-   $ streamlit run dashboard.py
+   $ streamlit run Streamlit-Dashboard/dashboard.py
    ```
 
 ### Setup Environment - Anaconda

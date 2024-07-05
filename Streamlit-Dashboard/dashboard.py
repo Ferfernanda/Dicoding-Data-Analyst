@@ -7,11 +7,11 @@ import streamlit as st
 sns.set(style='darkgrid')
 
 # DataFrame Day
-df_day = pd.read_csv("cleaned_bike-sharing_day.csv")
+df_day = pd.read_csv("Streamlit-Dashboard\cleaned_bike-sharing_day.csv")
 df_day.head()
 
 # DataFrame Hour
-df_hour = pd.read_csv("cleaned_bike-sharing_hour.csv")
+df_hour = pd.read_csv("Streamlit-Dashboard\cleaned_bike-sharing_hour.csv")
 df_hour.head()
 
 df_day = df_day.drop("instant", axis=1)
